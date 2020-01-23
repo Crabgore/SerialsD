@@ -1,4 +1,4 @@
-package database;
+package model.database;
 
 import model.Sequence;
 import model.Serial;
@@ -61,16 +61,16 @@ public class SerialMapper implements SerialDB{
     }
 
     @Override
-    public void delete(Connection connection, Serial serial) {
+    public void delete(Connection connection, int id) {
         int result = -1;
         PreparedStatement preparedStatement = null;
         String insert = "DELETE FROM serials WHERE id = ?;";
         try {
             preparedStatement = connection.prepareStatement(insert);
-            preparedStatement.setInt(1, serial.getId());
+            preparedStatement.setInt(1, id);
             int count = preparedStatement.executeUpdate();
             result = 0;
-            serialMap.remove(serial.getId());
+            serialMap.remove(id);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -95,7 +95,6 @@ public class SerialMapper implements SerialDB{
                         resultSet.getInt(4), resultSet.getInt(5));
                 serials.add(serial);
                 serialMap.put(serial.getId(), serial);
-                System.out.println(serial.getTitle());
             }
         } catch (SQLException e) {
             e.printStackTrace();
