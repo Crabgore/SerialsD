@@ -16,8 +16,7 @@ public class Serial {
         this.year = year;
     }
 
-    public Serial() {
-    }
+    public Serial() {}
 
     public String save() {
         return "Сериал "  + '"' + title + '"' +" сохранён";
