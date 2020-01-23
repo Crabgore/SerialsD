@@ -95,7 +95,6 @@ public class SerialMapper implements SerialDB{
                         resultSet.getInt(4), resultSet.getInt(5));
                 serials.add(serial);
                 serialMap.put(serial.getId(), serial);
-                System.out.println(serial.getTitle());
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,6 +1,9 @@
 package view;
 
 import controller.Controller;
+import model.Serial;
+
+import java.util.List;
 
 public class Main {
     private static Controller controller;
@@ -16,5 +19,17 @@ public class Main {
 
 
         controller.end();
+    }
+
+    public static void added(String title) {
+        System.out.println("Сериал " + title + " добавлен в базу!");
+    }
+
+    public static void deleted(String title) {
+        System.out.println("Сериал " + title + " удалён из базы!");
+    }
+
+    public static void showSerials(List<Serial> serials) {
+        System.out.println(serials);
     }
 }

@@ -68,7 +68,7 @@ public class Serial {
 
     @Override
     public String toString() {
-        return "Название: " + title + "\n" + "Количество сезонов: " + seasons + "\n" + "Количество серий: "  + series
+        return   "\n" + "Название: " + title + "\n" + "Количество сезонов: " + seasons + "\n" + "Количество серий: "  + series
                 + "\n" + "Год выпуска: "+ year;
     }
 }
